@@ -1,0 +1,13 @@
+@mixin flex($aic, $jc, $gap, $fdc) {
+    display: flex;
+    align-items: $aic;
+    justify-content: $jc;
+    gap: $gap;
+    flex-direction: $fdc;
+}
+
+@mixin grid($gtc, $gap) {
+    display: grid;
+    grid-template-columns: repeat($gtc);
+    gap: $gap;
+}

@@ -1,0 +1,149 @@
+@use "./mixin" as *;
+@use "./variable" as *;
+
+.header{
+    background-color: rgb(207, 240, 240);
+    padding: 5px 0;
+    box-shadow: 1px 1px 20px 1px black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    .container{
+        @include flex (center, space-between, 30px, row);
+    }
+    &__logo{
+        width: 200px;
+    }
+}
+
+.nav{
+    &__list{
+        @include flex (center, center, 30px, row);
+    }
+    &__item{
+        @include flex(center, center, 5px, column);
+        a{
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: rgb(92, 87, 87);
+            font-family: "Roboto";
+        }
+        a:hover{
+            color: blue;
+        }
+        a:active{
+            color: red;
+            transition: all 0.1s ease 1;
+        }
+    }
+    &__menu,
+    &__ext,
+    #check{
+        display: none;
+    }
+    &__linya{
+        margin-top: 0px;
+    }
+}
+
+.nav__item:hover .nav__linya{
+    animation: name 1s ease forwards;
+}
+
+@keyframes  name {
+    1% {
+            width: 1%;
+            background-color: rgb(92, 87, 87);
+            height: 3px;
+    }
+    100% {
+            width: 100%;
+            background-color: rgb(92, 87, 87);
+            height: 3px;
+    }
+}
+
+
+@media (max-width:760px) {
+    .nav{
+        &__list{
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 70%;
+            height: 100vh;
+            background-color: rgb(19, 197, 197);
+            @include flex (center, center, 30px, column);
+            transition: all 1s ease;
+        }
+       
+        &__menu {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 2px solid black;
+            border-radius: 10px;
+            img{
+                width: 35px;
+                height: 35px;
+            }
+        }
+        #check:checked ~ .nav__list{
+            left: 0;
+        }
+    }
+
+}
+
+@media (max-width:450px) {
+    .nav{
+        &__list{
+            width: 100%;
+        }
+        &__ext {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 2px solid black;
+            border-radius: 10px;
+            img{
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+}
+
+@media (max-width:350px) {
+    .header{
+        &__logo{
+            width: 150px;
+        }
+    }
+    .nav{
+        &__menu {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            img{
+                width: 25px;
+                height: 25px;
+            }
+        }
+        &__ext {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            img{
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}
