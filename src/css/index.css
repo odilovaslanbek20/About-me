@@ -5,6 +5,21 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(203, 231, 251);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
 main {
   padding-top: 60px;
   padding: 110px 0px 0px 0px;
@@ -327,17 +342,6 @@ template {
   display: none;
 }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
-
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
 .header {
   background-color: rgb(207, 240, 240);
   padding: 5px 0;
@@ -481,6 +485,110 @@ template {
   .nav__ext img {
     width: 25px;
     height: 25px;
+  }
+}
+.home {
+  margin-top: 80px;
+}
+.home .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  flex-direction: row;
+}
+.home__cards__left {
+  width: 100%;
+}
+.home__cards__right {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  flex-direction: row;
+}
+.home__left__title {
+  color: rgb(45, 42, 42);
+  font: 700 40px "Roboto", sans-serif;
+}
+.home__left__text {
+  color: rgb(45, 42, 42);
+  font-size: 17px;
+  font-weight: 400;
+  font-family: "Roboto";
+  line-height: 25px;
+}
+.home__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale();
+}
+
+@media (max-width: 1050px) {
+  .home .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-direction: row;
+  }
+  .home__left__text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 870px) {
+  .home__left__title {
+    font-size: 30px;
+  }
+  .home__left__text {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+@media (max-width: 730px) {
+  .home .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: column;
+  }
+  .home__img {
+    border-radius: 50px;
+  }
+  .home__cards__right {
+    order: 1;
+  }
+  .home__cards__left {
+    order: 2;
+  }
+}
+@media (max-width: 500px) {
+  .home {
+    margin-top: 50px;
+  }
+  .home__left__title {
+    text-align: center;
+  }
+  .home__left__text {
+    text-align: center;
+  }
+}
+@media (max-width: 350px) {
+  .home {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 320px) {
+  .home__left__title {
+    font-size: 25px;
+  }
+  .home__left__text {
+    font-size: 12px;
+    line-height: 18px;
   }
 }
 
